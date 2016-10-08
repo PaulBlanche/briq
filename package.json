@@ -1,0 +1,46 @@
+{
+  "name": "briq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/bundle.umd.js",
+  "jsnext:main": "dist/bundle.es.js",
+  "scripts": {
+    "test": "BABEL_ENV=development babel-tape-runner ./lib/Router/Router.test.js | tap-spec",
+    "build": "BABEL_ENV=production rollup -i ./index.js -c -m && uglifyjs ./dist/bundle.umd.js -c --in-source-map ./dist/bundle.umd.js.map --source-map ./dist/bundle.umd.min.js.map --source-map-url bunde.umd.min.js.map> ./dist/bundle.umd.min.js"
+  },
+  "author": "Paul Blanche <blanchepaule@whiteshoulders.fr>",
+  "license": "ISC",
+  "dependencies": {
+    "cuid": "^1.3.8",
+    "debug": "^2.2.0",
+    "uglifyjs": "^2.4.10"
+  },
+  "devDependencies": {
+    "babel-istanbul": "^0.11.0",
+    "babel-plugin-external-helpers": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-babili": "0.0.3",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-tape-runner": "^2.0.1",
+    "babelify": "^7.3.0",
+    "browser-run": "^3.2.0",
+    "browserify": "^13.1.0",
+    "browserify-babel-istanbul": "^0.4.0",
+    "browserify-shim": "^3.8.12",
+    "docco": "^0.7.0",
+    "envify": "^3.4.1",
+    "exorcist": "^0.4.0",
+    "jsdom": "^9.5.0",
+    "rollup": "^0.36.0",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-cleanup": "^0.1.4",
+    "rollup-plugin-commonjs": "^5.0.4",
+    "rollup-plugin-node-builtins": "^1.2.0",
+    "rollup-plugin-node-globals": "^1.0.9",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0",
+    "uglifyify": "^3.0.2"
+  }
+}
